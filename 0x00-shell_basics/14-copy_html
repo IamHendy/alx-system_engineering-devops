@@ -1,2 +1,2 @@
 #!/bin/bashc
-cp -rua *.html
+cp -u *.html ..
