@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
-# displays "Holberton School" 10 times, using the while loop.
+# displays "Best School" 10 times, using the while loop.
 # in the 9th iteration, displays Holberton School and then Hi on a new line.
 
 i=1
 while ((i <= 10))
 do
-	echo 'Holberton School'
+	echo 'Best School'
     if ((i == 9))
     then
         echo 'Hi'
