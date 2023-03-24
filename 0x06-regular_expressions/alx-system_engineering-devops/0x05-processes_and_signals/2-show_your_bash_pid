@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#command to print processes with bash
+# shellcheck disable=SC2009
+ps aux --forest | grep bash
