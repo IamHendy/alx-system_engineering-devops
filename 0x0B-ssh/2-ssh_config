@@ -1,0 +1,9 @@
+#SSH configuration file for the local SSH client
+#
+
+Host Hendy-01
+	HostName 52.3.255.135
+	user ubuntu
+	IdentityFile /c/Users/Iamhendy/.ssh
+	PubkeyAuthentication yes
+	PasswordAuthentication no
