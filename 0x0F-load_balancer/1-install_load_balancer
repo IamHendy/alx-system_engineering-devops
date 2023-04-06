@@ -13,7 +13,7 @@ frontend hendy-frontend
  	 mode http
 	 default_backend hendy-backend
 
-backend sage-backend
+backend hendy-backend
  	balance roundrobin
  	server 104361-web-01 52.3.255.135 check
 	server 104361-web-02 52.86.225.142 check
