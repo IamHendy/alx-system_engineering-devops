@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """using the JSONPlaceholder API:
-    export information about th TODO list progress for a given employee ID to a file (CSV format), file name must be:  <user_id>.csv"""
+    export information about th TODO list progress for a given employee ID
+    to a file (CSV format), file name must be:  <user_id>.csv"""
 
 import csv
 import requests
