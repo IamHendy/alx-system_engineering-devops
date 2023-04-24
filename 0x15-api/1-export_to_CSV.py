@@ -8,17 +8,16 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-    url = "https://jsonplaceholder.typicode.com/"
-    user = requests.get(url + "users/{}".format(argv[1])).json()
-    todo = requests.get(url + "todos", params={"userId": argv[1]}).json()
-    tasks =[]
-    for task in todo:
-        if task.get('completed')is True:
-            tasks.append(task.get('title'))
+    user_id = argv[1]
+    user_url = "https://jsonplaceholder.typicode.com/users/" + user_id
+    user_dict = requests.get(user_url).json()
+    user_name = user_dict.get("username")
+    user_todo = requests.get("{}/todos".format(user_url))
+    user_todo = user_todo.json()
+    file_name = user_id + ".csv"
 
-    with open(str(argv[1]) + ".csv", "w") as file:
-        writer = csv.writer(file, quoting=csv.QUOTE_ALL)
-        for task in todo:
-            writer.writerow([int(argv[1]), user.get('username'),
-                task.get('completed'),task.get('title')])
-
+    with open(file_name, 'w') as csvfile:
+        for item in user_todo:
+            csvfile.write('"{}","{}","{}","{}"\n'.format(item.get(
+                 "userId"), user_name, item.get("completed"),
+                 item.get("title")))

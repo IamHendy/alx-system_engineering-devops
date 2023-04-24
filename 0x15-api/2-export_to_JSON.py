@@ -21,5 +21,5 @@ if __name__ == '__main__':
 
     json_obt = {}
     json_obt[argv[1]] = tasks
-    with open(argv[1] + ".json","w") as json_file:
+    with open(argv[1] + ".json", "w") as json_file:
         json.dump(json_obt, json_file)
